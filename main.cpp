@@ -12,10 +12,10 @@ struct Teacher {
 
 struct Lesson {
     int teacher;
-    string sub;
+    string subj;
 };
 
-map<string, vector<vector<pair<int, Lesson>>>> schedule;
+map<string, vector<vector<Lesson>>> schedule;
 vector<Teacher> teachers;
 map<string, vector<pair<Lesson, int>>> program;
 
@@ -62,7 +62,7 @@ int main() {
     for (int i = 0; i < g; i++) {
         fin >> s >> sub;
         for (int j = 0; j < sub; j++) {
-            fin >> tmp.sub >> tmp.teacher >> c;
+            fin >> tmp.subj >> tmp.teacher >> c;
             program[s].push_back({tmp, c});
         }
     }
@@ -71,27 +71,47 @@ int main() {
     for (pair<string, vector<pair<Lesson, int>>> i: program) {
         fout << i.first << endl;
         for (pair<Lesson, int> j: i.second) {
-            fout << j.first.sub << " " << teachers[j.first.teacher].name << " " << j.second << endl;
+            fout << j.first.subj << " " << teachers[j.first.teacher].name << " " << j.second << endl;
         }
     }
 
-    for (pair<string, vector<pair<Lesson, int>>> i: program) {
-        vector<vector<pair<int, Lesson>>> sched;
+    Lesson none;
+    none.teacher = -1;
+    none.subj = "";
 
-/*        for (pair<Lesson, int> j: i.second) {
+    for (pair<string, vector<pair<Lesson, int>>> i: program) {
+        vector<vector<Lesson>> sched;
+        sched.resize(6);
+        vector<pair<Lesson, int>> tmp = i.second;
+        for (pair<Lesson, int> j: tmp) {
             for (int d = 0; d < 6; d++) {
+                sched[d].resize(8, none);
                 for (int l = 0; l < 8; l++) {
-                    if (teachers[j.second].time[d][l]) {
-//                        sched.push_back();
+                    if (teachers[j.first.teacher].time[d][l] && j.second > 0) {
+                        sched[d][l] = j.first;
+                        j.second--;
                     }
                 }
             }
 
-        }*/
-
+        }
         schedule[i.first] = sched;
     }
 
+    for (pair<string, vector<vector<Lesson>>> s: schedule) {
+        fout << s.first << endl;
+        for (int i = 0; i < 6; i++) {
+            fout << "Day " << i << endl;
+            for (int j = 0; j < 8; j++) {
+                fout << j << ": ";
+                if (s.second[i][j].teacher != -1) {
+                    fout << s.second[i][j].subj << " " << teachers[s.second[i][j].teacher].name;
+                }
+                fout << endl;
+            }
+        }
+        fout << endl;
+    }
     fout.close();
     return 0;
 }
