@@ -15,7 +15,7 @@ struct Lesson {
     string sub;
 };
 
-vector<vector<pair<int, Lesson>>> schedule;
+map<string, vector<vector<pair<int, Lesson>>>> schedule;
 vector<Teacher> teachers;
 map<string, vector<pair<Lesson, int>>> program;
 
@@ -33,9 +33,8 @@ int main() {
         fin >> teachers[i].name;
         teachers[i].time.resize(6);
         for (int k = 0; k < 6; k++) {
-            fin >> m;
-            teachers[i].time[k].resize(m);
-            for (int j = 0; j < m; j++) {
+            teachers[i].time[k].resize(8);
+            for (int j = 0; j < 8; j++) {
                 fin >> teachers[i].time[k][j];
             }
         }
@@ -75,7 +74,24 @@ int main() {
             fout << j.first.sub << " " << teachers[j.first.teacher].name << " " << j.second << endl;
         }
     }
-    
+
+    for (pair<string, vector<pair<Lesson, int>>> i: program) {
+        vector<vector<pair<int, Lesson>>> sched;
+
+        for (pair<Lesson, int> j: i.second) {
+            for (int d = 0; d < 6; d++) {
+                for (int l = 0; l < 8; l++) {
+                    if (teachers[j.second].time[d][l]) {
+ //                       sched.push_back();
+                    }
+                }
+            }
+
+        }
+
+        schedule[i.first] = sched;
+    }
+
     fout.close();
     return 0;
 }
