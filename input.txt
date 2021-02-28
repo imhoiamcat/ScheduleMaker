@@ -1,4 +1,4 @@
-2
+3
 Los
 0 0 0 0 0 0 0 0
 1 0 0 0 0 0 0 0
@@ -13,14 +13,24 @@ GA
 1 0 1 0 1 0 1 0
 0 0 1 0 1 1 0 0
 0 1 0 1 1 0 0 0
+Oblender
+1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0
+1 1 0 0 0 0 0 0
+0 0 1 1 1 1 0 0
+0 1 1 0 1 1 0 0
+1 1 0 1 1 1 0 0
 
 2
 10m
-2
+3
 geometry 0 3
 mathematical_analysis 1 4
+russian 2 2
 9m
-3
+5
 algebra 0 2
 maths 0 3
 geometry 1 1
+russian 2 5
+literature 2 3
