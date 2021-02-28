@@ -78,16 +78,16 @@ int main() {
     for (pair<string, vector<pair<Lesson, int>>> i: program) {
         vector<vector<pair<int, Lesson>>> sched;
 
-        for (pair<Lesson, int> j: i.second) {
+/*        for (pair<Lesson, int> j: i.second) {
             for (int d = 0; d < 6; d++) {
                 for (int l = 0; l < 8; l++) {
                     if (teachers[j.second].time[d][l]) {
- //                       sched.push_back();
+//                        sched.push_back();
                     }
                 }
             }
 
-        }
+        }*/
 
         schedule[i.first] = sched;
     }
