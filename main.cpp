@@ -2,18 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <map>
+#include "teacher_class.h"
+#include "lesson_class.h"
 
 using namespace std;
-
-struct Teacher {
-    string name;
-    vector<vector<int>> time;
-};
-
-struct Lesson {
-    int teacher;
-    string subj;
-};
 
 map<string, vector<vector<Lesson>>> schedule;
 vector<Teacher> teachers;
@@ -29,22 +21,25 @@ int main() {
     teachers.resize(n);
 
     //1. Enter list of teachers
+    string tmp_name;
+    vector<vector<int>> tmp_time;
     for (int i = 0; i < n; i++) {
-        fin >> teachers[i].name;
-        teachers[i].time.resize(6);
+        fin >> tmp_name;
+        tmp_time.resize(6);
         for (int k = 0; k < 6; k++) {
-            teachers[i].time[k].resize(8);
+            tmp_time[k].resize(8);
             for (int j = 0; j < 8; j++) {
-                fin >> teachers[i].time[k][j];
+                fin >> tmp_time[k][j];
             }
         }
+        teachers[i] = Teacher(tmp_name, tmp_time);
     }
 
     //2. Print list of teachers
     for (int i = 0; i < n; i++) {
-        fout << teachers[i].name << endl;
+        fout << teachers[i].getName() << endl;
         for (int k = 0; k < 6; k++) {
-            for (int j: teachers[i].time[k]) {
+            for (int j: teachers[i].getTime()[k]) {
                 fout << j << " ";
             }
             fout << endl;
@@ -57,13 +52,16 @@ int main() {
 
     //4. Enter program for each grade
     string s;
-    Lesson tmp;
+    Lesson tmp_lesson = Lesson();
+    string tmp_subj;
+    int tmp_teacher;
     int sub, c;
     for (int i = 0; i < g; i++) {
         fin >> s >> sub;
         for (int j = 0; j < sub; j++) {
-            fin >> tmp.subj >> tmp.teacher >> c;
-            program[s].push_back({tmp, c});
+            fin >> tmp_subj >> tmp_teacher >> c;
+            tmp_lesson = Lesson(tmp_teacher, tmp_subj);
+            program[s].push_back({tmp_lesson, c});
         }
     }
 
@@ -71,13 +69,11 @@ int main() {
     for (pair<string, vector<pair<Lesson, int>>> i: program) {
         fout << i.first << endl;
         for (pair<Lesson, int> j: i.second) {
-            fout << j.first.subj << " " << teachers[j.first.teacher].name << " " << j.second << endl;
+            fout << j.first.getSubj() << " " << teachers[j.first.getTeacher()].getName() << " " << j.second << endl;
         }
     }
 
-    Lesson none;
-    none.teacher = -1;
-    none.subj = "";
+    Lesson none = Lesson();
 
     for (pair<string, vector<pair<Lesson, int>>> i: program) {
         vector<vector<Lesson>> sched;
@@ -87,7 +83,7 @@ int main() {
             for (int d = 0; d < 6; d++) {
                 sched[d].resize(8, none);
                 for (int l = 0; l < 8; l++) {
-                    if (teachers[j.first.teacher].time[d][l] && j.second > 0) {
+                    if (teachers[j.first.getTeacher()].getTime()[d][l] && j.second > 0) {
                         sched[d][l] = j.first;
                         j.second--;
                     }
@@ -104,8 +100,8 @@ int main() {
             fout << "Day " << i << endl;
             for (int j = 0; j < 8; j++) {
                 fout << j << ": ";
-                if (s.second[i][j].teacher != -1) {
-                    fout << s.second[i][j].subj << " " << teachers[s.second[i][j].teacher].name;
+                if (s.second[i][j].getTeacher() != -1) {
+                    fout << s.second[i][j].getSubj() << " " << teachers[s.second[i][j].getTeacher()].getName();
                 }
                 fout << endl;
             }

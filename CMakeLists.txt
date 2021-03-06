@@ -3,4 +3,4 @@ project(ScheduleMaker)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ScheduleMaker main.cpp)
+add_executable(ScheduleMaker main.cpp teacher_class.h lesson_class.h)
