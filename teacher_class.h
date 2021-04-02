@@ -36,6 +36,15 @@ public:
     vector<vector<int>>&  getTime(){
         return time_;
     }
+    int can(int i) {
+        int cnt = 0;
+        for (int j = 0; j < 8; j++) {
+            if (time_[i][j]) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
 };
 
 #endif //SCHEDULEMAKER_TEACHER_CLASS_H

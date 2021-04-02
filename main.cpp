@@ -11,6 +11,33 @@ map<string, vector<vector<Lesson>>> schedule;
 vector<Teacher> teachers;
 map<string, vector<pair<Lesson, int>>> program;
 
+bool cmp(int i, int j, int d) {
+    return teachers[i].can(d) > teachers[j].can(d);
+}
+
+void makeSchedule() {
+    Lesson none = Lesson();
+
+    for (pair<string, vector<pair<Lesson, int>>> i: program) {
+        vector<vector<Lesson>> sched;
+        sched.resize(6);
+        vector<pair<Lesson, int>> tmp = i.second;
+        for (pair<Lesson, int> j: tmp) {
+            for (int d = 0; d < 6; d++) {
+                sched[d].resize(8, none);
+                for (int l = 0; l < 8; l++) {
+                    if (teachers[j.first.getTeacher()].getTime()[d][l] && j.second > 0) {
+                        sched[d][l] = j.first;
+                        j.second--;
+                    }
+                }
+            }
+
+        }
+        schedule[i.first] = sched;
+    }
+}
+
 int main() {
     ifstream fin("input.txt");
     ofstream fout("output.txt");
@@ -73,26 +100,7 @@ int main() {
         }
     }
 
-    Lesson none = Lesson();
-
-    for (pair<string, vector<pair<Lesson, int>>> i: program) {
-        vector<vector<Lesson>> sched;
-        sched.resize(6);
-        vector<pair<Lesson, int>> tmp = i.second;
-        for (pair<Lesson, int> j: tmp) {
-            for (int d = 0; d < 6; d++) {
-                sched[d].resize(8, none);
-                for (int l = 0; l < 8; l++) {
-                    if (teachers[j.first.getTeacher()].getTime()[d][l] && j.second > 0) {
-                        sched[d][l] = j.first;
-                        j.second--;
-                    }
-                }
-            }
-
-        }
-        schedule[i.first] = sched;
-    }
+    makeSchedule();
 
     for (pair<string, vector<vector<Lesson>>> s: schedule) {
         fout << s.first << endl;
