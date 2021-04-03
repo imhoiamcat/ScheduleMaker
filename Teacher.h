@@ -19,6 +19,13 @@ public:
         vector<vector<int>> tmp;
         setTime(tmp);
     }
+
+    Teacher(string name) {
+        setName(std::move(name));
+        vector<vector<int>> tmp;
+        setTime(tmp);
+    }
+
     Teacher(string name, vector<vector<int>> time) {
         setName(std::move(name));
         setTime(std::move(time));
@@ -44,6 +51,22 @@ public:
             }
         }
         return cnt;
+    }
+
+    int getID() {
+        return 0;
+    }
+
+    const string & getFirstName() {
+        return name_;
+    }
+
+    const string &getSecondName() {
+        return name_;
+    }
+
+    const string &getLastName() {
+        return name_;
     }
 };
 
