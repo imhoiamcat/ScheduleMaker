@@ -29,6 +29,8 @@ public:
 
     void addTeacher(const string &string);
 
+    const map<string, vector<vector<Lesson>>> &getSchedule() const;
+
 private:
     map<string, vector<vector<Lesson>>> schedule;
     vector<Teacher> teachers;

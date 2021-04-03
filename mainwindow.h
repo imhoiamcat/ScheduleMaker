@@ -33,6 +33,10 @@ private slots:
 
     void on_gradeTableWidget_cellClicked(int row, int column);
 
+    void on_generateButton_clicked();
+
+    void on_scheduleTableWidget_cellClicked(int row, int column);
+
 private:
     Ui::MainWindow *ui;
     Schedule schedule;

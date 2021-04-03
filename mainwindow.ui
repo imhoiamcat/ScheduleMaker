@@ -187,67 +187,6 @@
       </column>
      </widget>
     </widget>
-    <widget class="QWidget" name="Subject">
-     <attribute name="title">
-      <string>Subject</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="geometry">
-       <rect>
-        <x>5</x>
-        <y>1</y>
-        <width>641</width>
-        <height>541</height>
-       </rect>
-      </property>
-      <column>
-       <property name="text">
-        <string>SubjectID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Grade</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>TeacherID</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>670</x>
-        <y>20</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Add</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>670</x>
-        <y>60</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Remove</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="Class">
      <attribute name="title">
       <string>Class</string>
@@ -337,61 +276,29 @@
      <attribute name="title">
       <string>Schedule</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget_3">
+     <widget class="QTableWidget" name="scheduleTableWidget">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>641</width>
-        <height>541</height>
+        <y>10</y>
+        <width>71</width>
+        <height>521</height>
        </rect>
       </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>70</number>
+      </attribute>
       <column>
        <property name="text">
         <string>Grade</string>
        </property>
       </column>
-      <column>
-       <property name="text">
-        <string>Mon</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Tue</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Wed</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Thu</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Wed</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Sat</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Sun</string>
-       </property>
-      </column>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="generateButton">
       <property name="geometry">
        <rect>
         <x>670</x>
-        <y>20</y>
+        <y>10</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -399,6 +306,202 @@
       <property name="text">
        <string>Generate</string>
       </property>
+     </widget>
+     <widget class="QTabWidget" name="scheduleTabWidget">
+      <property name="geometry">
+       <rect>
+        <x>86</x>
+        <y>9</y>
+        <width>571</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <widget class="QWidget" name="mon">
+       <attribute name="title">
+        <string>Mon</string>
+       </attribute>
+       <widget class="QTableWidget" name="monSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Lesson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tue">
+       <attribute name="title">
+        <string>Tue</string>
+       </attribute>
+       <widget class="QTableWidget" name="tueSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="columnCount">
+         <number>3</number>
+        </property>
+        <column>
+         <property name="text">
+          <string>Leson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="wed">
+       <attribute name="title">
+        <string>Wed</string>
+       </attribute>
+       <widget class="QTableWidget" name="wedSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Leson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="thu">
+       <attribute name="title">
+        <string>Thu</string>
+       </attribute>
+       <widget class="QTableWidget" name="thuSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Leson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="fri">
+       <attribute name="title">
+        <string>Fri</string>
+       </attribute>
+       <widget class="QTableWidget" name="friSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Leson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="sat">
+       <attribute name="title">
+        <string>Sat</string>
+       </attribute>
+       <widget class="QTableWidget" name="satSchedTableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>541</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Leson</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Subject</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Teacher</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>

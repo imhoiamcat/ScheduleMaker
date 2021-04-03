@@ -99,3 +99,7 @@ void Schedule::addTeacher(const string &name) {
 const map<string, vector<pair<Lesson, int>>> &Schedule::getProgram() const {
     return program;
 }
+
+const map<string, vector<vector<Lesson>>> &Schedule::getSchedule() const {
+    return schedule;
+}
