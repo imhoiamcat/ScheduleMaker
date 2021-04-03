@@ -120,3 +120,30 @@ void MainWindow::on_teacherTableWidget_cellClicked(int row, int column)
         }
     }
 }
+
+void MainWindow::on_gradeTableWidget_cellClicked(int row, int column)
+{
+    QTableWidget *gradeTable = this->centralWidget()->findChild<QTableWidget *>(QString("gradeTableWidget"));
+    QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("gradeDetailsTableWidget"));
+
+    auto item  = gradeTable->item(row, 1);
+
+
+    string grade = item->text().toStdString();
+
+    auto details = schedule.getProgram().at(grade);
+    table->setRowCount(details.size());
+    for (int i = 0; i < details.size(); i++) {
+        QTableWidgetItem *item = new QTableWidgetItem(
+                QString(details[i].first.getSubj().c_str()));
+        table->setItem(i, 0, item);
+
+        item = new QTableWidgetItem(
+                QString(schedule.getTeacher(details[i].first.getTeacher()).getName().c_str()));
+        table->setItem(i, 1, item);
+
+        item = new QTableWidgetItem(
+                QString(to_string(details[i].second).c_str()));
+        table->setItem(i, 2, item);
+    }
+}

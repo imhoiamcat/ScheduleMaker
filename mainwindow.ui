@@ -304,6 +304,34 @@
        <string>Remove</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="gradeDetailsTableWidget">
+      <property name="geometry">
+       <rect>
+        <x>245</x>
+        <y>1</y>
+        <width>411</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Subject</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Teacher</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Hours</string>
+       </property>
+      </column>
+     </widget>
     </widget>
     <widget class="QWidget" name="Schedule">
      <attribute name="title">
