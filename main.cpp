@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.load("input.txt");
 
-    QTableWidget* teacherTable = w.centralWidget()->findChild<QTableWidget*>(QString("teacherTableWidget"));
+    QTableWidget* teacherTable = w.centralWidget()->findChild<QTableWidget*>(
+            QString("teacherTableWidget"));
     QStringList list;
     list << "TeacherID" << "Name" << "Second Name" << "Last Name";
     teacherTable->setHorizontalHeaderLabels(list);
