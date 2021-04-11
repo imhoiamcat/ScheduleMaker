@@ -42,7 +42,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teacher&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="teacher">
          <attribute name="title">
@@ -179,6 +179,9 @@
           </item>
           <item row="0" column="1">
            <widget class="QTableWidget" name="teacherTableWidget">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
             <property name="selectionMode">
              <enum>QAbstractItemView::SingleSelection</enum>
             </property>
@@ -189,7 +192,10 @@
              <number>2</number>
             </property>
             <attribute name="horizontalHeaderDefaultSectionSize">
-             <number>100</number>
+             <number>200</number>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
             </attribute>
             <column>
              <property name="text">
@@ -269,6 +275,9 @@
                 <property name="selectionBehavior">
                  <enum>QAbstractItemView::SelectRows</enum>
                 </property>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
                 <column>
                  <property name="text">
                   <string>ClassID</string>
@@ -318,9 +327,15 @@
           </item>
           <item row="0" column="2">
            <widget class="QTableWidget" name="gradeDetailsTableWidget">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
             <property name="columnCount">
              <number>3</number>
             </property>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
             <column>
              <property name="text">
               <string>Subject</string>
@@ -363,6 +378,9 @@
           </item>
           <item row="0" column="0">
            <widget class="QTableWidget" name="scheduleTableWidget">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
             <attribute name="horizontalHeaderDefaultSectionSize">
              <number>70</number>
             </attribute>
@@ -415,6 +433,12 @@
                <layout class="QGridLayout" name="gridLayout_9">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="monSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Lesson</string>
@@ -441,9 +465,15 @@
                <layout class="QGridLayout" name="gridLayout_8">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="tueSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
                   <property name="columnCount">
                    <number>3</number>
                   </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Leson</string>
@@ -470,6 +500,12 @@
                <layout class="QGridLayout" name="gridLayout_7">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="wedSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Leson</string>
@@ -496,6 +532,12 @@
                <layout class="QGridLayout" name="gridLayout_6">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="thuSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Leson</string>
@@ -522,6 +564,12 @@
                <layout class="QGridLayout" name="gridLayout_5">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="friSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Leson</string>
@@ -548,6 +596,12 @@
                <layout class="QGridLayout" name="gridLayout_2">
                 <item row="0" column="0">
                  <widget class="QTableWidget" name="satSchedTableWidget">
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
                   <column>
                    <property name="text">
                     <string>Leson</string>

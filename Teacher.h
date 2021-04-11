@@ -57,10 +57,6 @@ public:
         return 0;
     }
 
-    const string & getFirstName() {
-        return name_;
-    }
-
     const string &getSecondName() {
         return name_;
     }

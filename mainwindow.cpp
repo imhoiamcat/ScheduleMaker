@@ -18,7 +18,6 @@ void MainWindow::on_pushButton_clicked() {
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTableWidget"));
 
     int row = schedule.teacherCount();
-    schedule.addTeacher("Ivan");
 
     table->setRowCount(schedule.teacherCount());
 
@@ -27,16 +26,8 @@ void MainWindow::on_pushButton_clicked() {
     table->setItem(row, 0, item);
 
     item = new QTableWidgetItem(
-            QString(schedule.getTeacher(row).getFirstName().c_str()));
+            QString(schedule.getTeacher(row).getName().c_str()));
     table->setItem(row, 1, item);
-
-    item = new QTableWidgetItem(
-            QString(schedule.getTeacher(row).getSecondName().c_str()));
-    table->setItem(row, 2, item);
-
-    item = new QTableWidgetItem(
-            QString(schedule.getTeacher(row).getLastName().c_str()));
-    table->setItem(row, 3, item);
 }
 
 
@@ -81,16 +72,8 @@ void MainWindow::load(const string& input_name) {
         table->setItem(row, 0, item);
 
         item = new QTableWidgetItem(
-                QString(schedule.getTeacher(row).getFirstName().c_str()));
+                QString(schedule.getTeacher(row).getName().c_str()));
         table->setItem(row, 1, item);
-
-        item = new QTableWidgetItem(
-                QString(schedule.getTeacher(row).getSecondName().c_str()));
-        table->setItem(row, 2, item);
-
-        item = new QTableWidgetItem(
-                QString(schedule.getTeacher(row).getLastName().c_str()));
-        table->setItem(row, 3, item);
     }
 
     table = this->centralWidget()->findChild<QTableWidget *>(QString("gradeTableWidget"));
