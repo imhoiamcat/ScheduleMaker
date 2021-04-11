@@ -24,7 +24,7 @@ set(PROJECT_SOURCES
         mainwindow.ui
         Teacher.h
         Schedule.cpp
-        Schedule.h)
+        Schedule.h ScheduleConverter.cpp ScheduleConverter.h ScheduleJSONConverter.cpp ScheduleJSONConverter.h ScheduleXMLConverter.cpp ScheduleXMLConverter.h)
 
 
 add_executable(ScheduleMaker ${PROJECT_SOURCES})

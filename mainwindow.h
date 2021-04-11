@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Teacher.h"
 #include "Schedule.h"
+#include "ScheduleConverter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,9 +38,13 @@ private slots:
 
     void on_scheduleTableWidget_cellClicked(int row, int column);
 
+
+
 private:
     Ui::MainWindow *ui;
     Schedule schedule;
+  void on_actionOpen_triggered();
+  void on_actionSave_triggered();
 };
 
 #endif // MAINWINDOW_H

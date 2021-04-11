@@ -1,0 +1,12 @@
+//
+// Created by mikha on 11.04.2021.
+//
+
+#ifndef SCHEDULEMAKER__SCHEDULECONVERTER_H_
+#define SCHEDULEMAKER__SCHEDULECONVERTER_H_
+
+class ScheduleConverter {
+
+};
+
+#endif //SCHEDULEMAKER__SCHEDULECONVERTER_H_

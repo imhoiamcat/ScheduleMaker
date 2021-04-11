@@ -203,3 +203,13 @@ void MainWindow::on_scheduleTableWidget_cellClicked(int row, int column)
         }
     }
 }
+
+void MainWindow::on_actionOpen_triggered()
+{
+    cout << "Open!" << std::endl;
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    schedule.save("out.txt");
+}
