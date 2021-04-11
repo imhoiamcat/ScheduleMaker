@@ -632,6 +632,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>

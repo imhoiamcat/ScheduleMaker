@@ -1,4 +1,5 @@
 #include <QTableView>
+#include <QFileDialog>
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
@@ -206,7 +207,10 @@ void MainWindow::on_scheduleTableWidget_cellClicked(int row, int column)
 
 void MainWindow::on_actionOpen_triggered()
 {
-    cout << "Open!" << std::endl;
+    std::string file_name = QFileDialog::getOpenFileName(this,
+        tr("Open Schedule"), ".", tr("Schedule Files (*.txt)")).toStdString();
+
+    load(file_name);
 }
 
 void MainWindow::on_actionSave_triggered()

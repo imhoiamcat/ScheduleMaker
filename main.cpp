@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.load("input.txt");
-
     QTableWidget* teacherTable = w.centralWidget()->findChild<QTableWidget*>(
             QString("teacherTableWidget"));
     QStringList list;

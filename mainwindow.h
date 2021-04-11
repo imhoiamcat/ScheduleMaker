@@ -38,13 +38,14 @@ private slots:
 
     void on_scheduleTableWidget_cellClicked(int row, int column);
 
+    void on_actionOpen_triggered();
 
+    void on_actionSave_triggered();
 
 private:
     Ui::MainWindow *ui;
     Schedule schedule;
-  void on_actionOpen_triggered();
-  void on_actionSave_triggered();
+
 };
 
 #endif // MAINWINDOW_H
