@@ -1,0 +1,12 @@
+//
+// Created by mikha on 11.04.2021.
+//
+
+#ifndef SCHEDULEMAKER__SCHEDULEXLSXCONVERTER_H_
+#define SCHEDULEMAKER__SCHEDULEXLSXCONVERTER_H_
+
+class ScheduleXLSXConverter {
+
+};
+
+#endif //SCHEDULEMAKER__SCHEDULEXLSXCONVERTER_H_

@@ -42,6 +42,8 @@ private slots:
 
     void on_actionSave_triggered();
 
+    void on_actionJSON_triggered();
+
 private:
     Ui::MainWindow *ui;
     Schedule schedule;

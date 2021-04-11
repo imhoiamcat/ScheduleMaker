@@ -23,8 +23,8 @@ public:
         }
     }
 
-    Teacher& getTeacher(int n) {
-        return teachers.at(n);
+    Teacher& getTeacher(int n) const {
+        return const_cast<Teacher &>(teachers.at(n));
     }
 
     void addTeacher(const string &string);

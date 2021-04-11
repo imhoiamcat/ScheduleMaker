@@ -6,6 +6,8 @@
 #define SCHEDULEMAKER_TEACHER_CLASS_H
 #include <iostream>
 #include <utility>
+#include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -37,7 +39,7 @@ public:
     void setTime(vector<vector<int>> time) {
         time_ = std::move(time);
     }
-    string getName() {
+    string getName() const {
         return name_;
     }
     vector<vector<int>>&  getTime(){
@@ -57,12 +59,22 @@ public:
         return 0;
     }
 
-    const string &getSecondName() {
+    const string & getSecondName() const {
         return name_;
     }
 
-    const string &getLastName() {
+    const string & getLastName() const {
         return name_;
+    }
+
+    string toJSON() const {
+      stringstream str_stream;
+      str_stream << "{" << endl;
+      str_stream << "\"Name\": " << "\"" << getName() << "\"," << endl;
+      str_stream << "\"SecondName\": " << "\"" << getSecondName() << "\"," << endl;
+      str_stream << "\"LastName\": " << "\"" << getLastName() << "\"" << endl;
+      str_stream << "}" << endl;
+      return str_stream.str();
     }
 };
 

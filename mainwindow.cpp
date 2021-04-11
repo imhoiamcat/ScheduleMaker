@@ -2,6 +2,7 @@
 #include <QFileDialog>
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "ScheduleJSONConverter.h"
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -199,4 +200,12 @@ void MainWindow::on_actionOpen_triggered()
 void MainWindow::on_actionSave_triggered()
 {
     schedule.save("out.txt");
+}
+
+void MainWindow::on_actionJSON_triggered()
+{
+  std::string file_name = QFileDialog::getSaveFileName(this,
+                                                       tr("Save Schedule"), ".", tr("JSON Files (*.json)")).toStdString();
+  ScheduleJSONConverter converter;
+  converter.save(file_name, schedule);
 }
