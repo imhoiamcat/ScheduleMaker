@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QT_VERSION 5)
@@ -24,8 +24,9 @@ set(PROJECT_SOURCES
         mainwindow.ui
         Teacher.h
         Schedule.cpp
-        Schedule.h ScheduleConverter.h ScheduleJSONConverter.cpp ScheduleJSONConverter.h ScheduleXMLConverter.cpp ScheduleXMLConverter.h ScheduleXLSXConverter.cpp ScheduleXLSXConverter.h)
+        Schedule.h ScheduleJSONConverter.cpp ScheduleJSONConverter.h ScheduleXMLConverter.cpp ScheduleXMLConverter.h ScheduleXLSXConverter.cpp ScheduleXLSXConverter.h)
 
 
 add_executable(ScheduleMaker ${PROJECT_SOURCES})
-target_link_libraries(ScheduleMaker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+include_directories(SYSTEM lib)
+target_link_libraries(ScheduleMaker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets "${CMAKE_CURRENT_SOURCE_DIR}/lib/libOpenXLSX-sharedd.dll")

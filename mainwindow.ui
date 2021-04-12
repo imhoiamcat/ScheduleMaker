@@ -675,6 +675,8 @@
      <property name="title">
       <string>Save As...</string>
      </property>
+     <addaction name="actionXLSX"/>
+     <addaction name="actionXML"/>
      <addaction name="actionJSON"/>
     </widget>
     <addaction name="actionOpen"/>
@@ -700,6 +702,16 @@
   <action name="actionJSON">
    <property name="text">
     <string>JSON</string>
+   </property>
+  </action>
+  <action name="actionXML">
+   <property name="text">
+    <string>XML</string>
+   </property>
+  </action>
+  <action name="actionXLSX">
+   <property name="text">
+    <string>XLSX</string>
    </property>
   </action>
  </widget>

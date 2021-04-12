@@ -3,6 +3,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "ScheduleJSONConverter.h"
+#include "ScheduleXMLConverter.h"
+#include "ScheduleXLSXConverter.h"
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -206,6 +208,19 @@ void MainWindow::on_actionJSON_triggered()
 {
   std::string file_name = QFileDialog::getSaveFileName(this,
                                                        tr("Save Schedule"), ".", tr("JSON Files (*.json)")).toStdString();
-  ScheduleJSONConverter converter;
-  converter.save(file_name, schedule);
+  schedule.save(file_name, ScheduleJSONConverter());
+}
+
+void MainWindow::on_actionXML_triggered()
+{
+  std::string file_name = QFileDialog::getSaveFileName(this,
+                                                       tr("Save Schedule"), ".", tr("XML Files (*.xml)")).toStdString();
+  schedule.save(file_name, ScheduleXMLConverter());
+}
+
+void MainWindow::on_actionXLSX_triggered()
+{
+  std::string file_name = QFileDialog::getSaveFileName(this,
+                                                       tr("Save Schedule"), ".", tr("Excel Files (*.xlsx)")).toStdString();
+  schedule.save(file_name, ScheduleXLSXConverter());
 }

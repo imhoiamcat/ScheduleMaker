@@ -67,13 +67,37 @@ public:
         return name_;
     }
 
-    string toJSON() const {
+    string getFullName() {
       stringstream str_stream;
-      str_stream << "{" << endl;
-      str_stream << "\"Name\": " << "\"" << getName() << "\"," << endl;
-      str_stream << "\"SecondName\": " << "\"" << getSecondName() << "\"," << endl;
-      str_stream << "\"LastName\": " << "\"" << getLastName() << "\"" << endl;
-      str_stream << "}" << endl;
+      str_stream << getName() << " " << getSecondName() << " " << getLastName();
+      str_stream.flush();
+      return str_stream.str();
+    }
+
+
+    string toJSON(int level) const {
+      stringstream str_stream;
+      str_stream << string(level, ' ') << "{" << endl;
+      level += 2;
+      str_stream << string(level, ' ') << "\"Name\": " << "\"" << getName() << "\"," << endl;
+      str_stream << string(level, ' ') << "\"SecondName\": " << "\"" << getSecondName() << "\"," << endl;
+      str_stream << string(level, ' ') << "\"LastName\": " << "\"" << getLastName() << "\"" << endl;
+      level -= 2;
+      str_stream << string(level, ' ') << "}" << endl;
+      str_stream.flush();
+      return str_stream.str();
+    }
+
+    string toXML(int level) const {
+      stringstream str_stream;
+      str_stream << string(level, ' ') << "<Teacher>" << endl;
+      level += 2;
+      str_stream << string(level, ' ') << "<Name>" << "\"" << getName() << "\"" << "</Name>" << endl;
+      str_stream << string(level, ' ') << "<SecondName>" << "\"" << getSecondName() << "\"" << "</SecondName>" << endl;
+      str_stream << string(level, ' ') << "<LastName>" << "\"" << getLastName() << "\"" << "</LastName>" << endl;
+      level -= 2;
+      str_stream << string(level, ' ') << "</Teacher>" << endl;
+      str_stream.flush();
       return str_stream.str();
     }
 };

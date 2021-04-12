@@ -7,11 +7,14 @@
 
 using namespace std;
 
+class ScheduleConverter;
+
 class Schedule {
 public:
     void load(const string& input_name);
     void make();
     void save(const string& output_name);
+    void save(const string& output_name, const ScheduleConverter& converter) const;
 
     int teacherCount() {
         return teachers.size();
@@ -37,6 +40,16 @@ private:
     map<string, vector<pair<Lesson, int>>> program;
 public:
     const map<string, vector<pair<Lesson, int>>> &getProgram() const;
+
+};
+
+
+
+class ScheduleConverter {
+ public:
+  ScheduleConverter() = default;
+  virtual ~ScheduleConverter() = default;
+  virtual void save(const std::string& path, const Schedule& schedule) const {};
 };
 
 

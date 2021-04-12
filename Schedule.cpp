@@ -91,6 +91,10 @@ void Schedule::save(const string& output_name) {
     fout.close();
 }
 
+void Schedule::save(const string &output_name, const ScheduleConverter& converter) const {
+  converter.save(output_name, *this);
+}
+
 void Schedule::addTeacher(const string &name) {
     Teacher t(name);
     teachers.push_back(t);
@@ -103,3 +107,4 @@ const map<string, vector<pair<Lesson, int>>> &Schedule::getProgram() const {
 const map<string, vector<vector<Lesson>>> &Schedule::getSchedule() const {
     return schedule;
 }
+

@@ -5,11 +5,11 @@
 #ifndef SCHEDULEMAKER__SCHEDULEJSONCONVERTER_H_
 #define SCHEDULEMAKER__SCHEDULEJSONCONVERTER_H_
 
-#include "ScheduleConverter.h"
 #include "Schedule.h"
-class ScheduleJSONConverter : ScheduleConverter {
+
+class ScheduleJSONConverter : public ScheduleConverter {
  public:
-  void save(const std::string& path, const Schedule& schedule) override;
+  void save(const std::string& path, const Schedule& schedule) const override;
 };
 
 #endif //SCHEDULEMAKER__SCHEDULEJSONCONVERTER_H_

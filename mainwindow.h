@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include "Teacher.h"
 #include "Schedule.h"
-#include "ScheduleConverter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,10 +43,13 @@ private slots:
 
     void on_actionJSON_triggered();
 
-private:
-    Ui::MainWindow *ui;
-    Schedule schedule;
+    void on_actionXML_triggered();
 
+    void on_actionXLSX_triggered();
+
+ private:
+  Ui::MainWindow *ui;
+  Schedule schedule;
 };
 
 #endif // MAINWINDOW_H
