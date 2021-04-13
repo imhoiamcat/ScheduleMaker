@@ -11,7 +11,7 @@ class ScheduleXLSXConverter: public ScheduleConverter {
  public:
   void save(const std::string& path, const Schedule& schedule) const override;
  private:
-  static string get_day(int day);
+  static pair<string, string> get_day(int day);
   static string get_coord(int x, int y);
   static pair<string, string> get_class_time(int class_num);
 };

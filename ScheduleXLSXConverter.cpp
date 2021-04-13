@@ -15,7 +15,13 @@ void ScheduleXLSXConverter::save(const string &path, const Schedule &schedule) c
   int x = 1;
   int y = 1;
   for (int i = 0; i < 6; i++) {
-    wks.cell(XLCellReference(get_coord(x, y))).value() = get_day(i);
+    auto day = get_day(i);
+    wks.cell(XLCellReference(get_coord(x, y))).value() = day.first;
+    y++;
+    wks.cell(XLCellReference(get_coord(x, y))).value() = "время";
+    x += 3;
+    wks.cell(XLCellReference(get_coord(x, y))).value() = day.second;
+    x -= 3;
     y++;
     for (int j = 0; j < 8; j++) {
       auto time = get_class_time(j);
@@ -31,6 +37,7 @@ void ScheduleXLSXConverter::save(const string &path, const Schedule &schedule) c
     }
     int old_y = y;
     int old_x = x;
+    x += 3;
     y -= 8;
     auto it = schedule.getSchedule().begin();
     for (int k = 0; k < schedule.getSchedule().size(); k++) {
@@ -44,13 +51,20 @@ void ScheduleXLSXConverter::save(const string &path, const Schedule &schedule) c
         }
         y++;
       }
-      y -= 8;
+      y -= 9;
+      wks.cell(XLCellReference(get_coord(x, y))).value() = s.first;
+      y++;
       x++;
-      for (int j = 0; j < 8; j++) {
-        wks.cell(XLCellReference(get_coord(x, y))).value() = j + 1;
+      if (k < schedule.getSchedule().size() - 1) {
+        for (int j = 0; j < 8; j++) {
+          wks.cell(XLCellReference(get_coord(x, y))).value() = j + 1;
+          y++;
+        }
+        it++;
+        y -= 9;
+        wks.cell(XLCellReference(get_coord(x, y))).value() = day.second;
         y++;
       }
-      y-=8;
     }
     x = old_x;
     y = old_y;
@@ -58,24 +72,24 @@ void ScheduleXLSXConverter::save(const string &path, const Schedule &schedule) c
   doc.save();
 }
 
-string ScheduleXLSXConverter::get_day(int day) {
+pair<string, string> ScheduleXLSXConverter::get_day(int day) {
   switch (day) {
     case 0:
-      return "Понедельник";
+      return make_pair("Понедельник", "Пн");
     case 1:
-      return "Вторник";
+      return make_pair("Вторник", "Вт");
     case 2:
-      return "Среда";
+      return make_pair("Среда", "Ср");
     case 3:
-      return "Четверг";
+      return make_pair("Четверг", "Чт");
     case 4:
-      return "Пятница";
+      return make_pair("Пятница", "Пт");
     case 5:
-      return "Суббота";
+      return make_pair("Суббота", "Сб");
     case 6:
-      return "Воскресенье";
+      return make_pair("Воскресенье", "Вс");
     default:
-      return "";
+      return make_pair("", "");
   }
 }
 
