@@ -29,6 +29,8 @@ public:
 
     void addTeacher(const string &string);
 
+    void deleteTeacher(const string &string);
+
     const map<string, vector<vector<Lesson>>> &getSchedule() const;
 
 private:

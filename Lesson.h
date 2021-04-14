@@ -9,14 +9,20 @@ class Lesson{
 private:
     int teacher_;
     string subj_;
+    bool tech_;
+    bool eng_;
 public:
     Lesson() {
         teacher_ = -1;
         subj_ = "";
+        tech_ = false;
+        eng_ = false;
     }
-    Lesson(int teacher, string subj) {
+    Lesson(int teacher, string subj, bool tech, bool eng) {
         setTeacher(teacher);
         setSubj(subj);
+        tech_ = tech;
+        eng_ = eng;
     }
     ~Lesson() = default;
     void setTeacher(int teacher) {
@@ -30,6 +36,12 @@ public:
     }
     string getSubj() {
         return subj_;
+    }
+    bool getTech() {
+        return tech_;
+    }
+    bool getEng() {
+        return eng_;
     }
 };
 

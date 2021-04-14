@@ -37,12 +37,13 @@ void Schedule::load(const string& input_name) {
     Lesson tmp_lesson = Lesson();
     string tmp_subj;
     int tmp_teacher;
-    int sub, c;
+    int sub, c, tech, eng;
     for (int i = 0; i < g; i++) {
         fin >> s >> sub;
         for (int j = 0; j < sub; j++) {
             fin >> tmp_subj >> tmp_teacher >> c;
-            tmp_lesson = Lesson(tmp_teacher, tmp_subj);
+            tmp_lesson = Lesson(tmp_teacher, tmp_subj, 0, 0);
+//            if (tech || eng) c*=2;
             program[s].push_back({tmp_lesson, c});
         }
     }
@@ -55,18 +56,21 @@ void Schedule::make() {
     for (pair<string, vector<pair<Lesson, int>>> i: program) {
         vector<vector<Lesson>> sched;
         sched.resize(6);
+        for (int d = 0; d < 6; d++) {
+            sched[d].resize(8, none);
+        }
         vector<pair<Lesson, int>> tmp = i.second;
         for (pair<Lesson, int> j: tmp) {
             for (int d = 0; d < 6; d++) {
-                sched[d].resize(8, none);
+                int cnt = 0;
                 for (int l = 0; l < 8; l++) {
-                    if (teachers[j.first.getTeacher()].getTime()[d][l] && j.second > 0) {
+                    if (teachers[j.first.getTeacher()].getTime()[d][l] && j.second > 0 && sched[d][l].getSubj()=="" && cnt<2) {
                         sched[d][l] = j.first;
                         j.second--;
+                        cnt++;
                     }
                 }
             }
-
         }
         schedule[i.first] = sched;
     }
@@ -94,6 +98,16 @@ void Schedule::save(const string& output_name) {
 void Schedule::addTeacher(const string &name) {
     Teacher t(name);
     teachers.push_back(t);
+}
+
+void Schedule::deleteTeacher(const string &name) {
+    int i = 0;
+    while(teachers[i].getName() != name && i < teachers.size()) {
+        i++;
+    }
+    if (i < teachers.size()) {
+        teachers.erase(teachers.begin()+i);
+    }
 }
 
 const map<string, vector<pair<Lesson, int>>> &Schedule::getProgram() const {
