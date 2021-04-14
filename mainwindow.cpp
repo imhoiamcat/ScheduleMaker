@@ -136,7 +136,8 @@ void MainWindow::on_gradeTableWidget_cellClicked(int row, int column)
         table->setItem(i, 0, item);
 
         item = new QTableWidgetItem(
-                QString(schedule.getTeacher(details[i].first.getTeacher()).getName().c_str()));
+                QString(details[i].first.getTeacher() >= 0 ?
+                schedule.getTeacher(details[i].first.getTeacher()).getName().c_str() : ""));
         table->setItem(i, 1, item);
 
         item = new QTableWidgetItem(
