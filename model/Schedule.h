@@ -27,7 +27,7 @@ public:
     }
 
     Teacher & getTeacher(int n) const {
-        return teachers.at(n);
+        return const_cast<Teacher &>(teachers.at(n));
     }
 
     void addTeacher(const string &string);

@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "model/Teacher.h"
 #include "model/Schedule.h"
-#include "model/ScheduleConverter.h"
+#include "model/ScheduleXLSXConverter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
