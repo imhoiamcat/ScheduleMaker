@@ -1,10 +1,10 @@
-#include "mainwindow.h"
+#include "ui/mainwindow.h"
 #include <QApplication>
 #include <QTableWidget>
 #include <QLinkedList>
 #include <QDesktopWidget>
 #include <QStyle>
-#include "Schedule.h"
+#include "model/Schedule.h"
 
 Schedule schedule;
 

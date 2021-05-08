@@ -19,13 +19,16 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        Teacher.h
-        Schedule.cpp
-        Schedule.h ScheduleConverter.cpp ScheduleConverter.h ScheduleJSONConverter.cpp ScheduleJSONConverter.h ScheduleXMLConverter.cpp ScheduleXMLConverter.h)
+        ui/mainwindow.cpp
+        ui/mainwindow.h
+        ui/mainwindow.ui
+        model/Teacher.h
+        model/Schedule.cpp
+        model/Schedule.h
+        model/ScheduleXLSXConverter.cpp
+        model/ScheduleXLSXConverter.h)
 
 
 add_executable(ScheduleMaker ${PROJECT_SOURCES})
-target_link_libraries(ScheduleMaker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+include_directories(SYSTEM lib)
+target_link_libraries(ScheduleMaker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets "${CMAKE_CURRENT_SOURCE_DIR}/lib/libOpenXLSX-sharedd.dll")
