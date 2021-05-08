@@ -28,24 +28,6 @@ set(PROJECT_SOURCES
         model/ScheduleXLSXConverter.cpp
         model/ScheduleXLSXConverter.h)
 
-set(CMAKE_AUTORCC YES)
 add_executable(ScheduleMaker ${PROJECT_SOURCES})
 include_directories(SYSTEM lib)
 target_link_libraries(ScheduleMaker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets "${CMAKE_CURRENT_SOURCE_DIR}/lib/libOpenXLSX-sharedd.dll")
-
-set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
-include(InstallRequiredSystemLibraries)
-install(PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
-        DESTINATION programs
-        COMPONENT applications)
-
-set(CPACK_PACKAGE_NAME "ScheduleMakerInstaller")
-set(CPACK_PACKAGE_VENDOR "Masha Ushakova")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "ScheduleMaker")
-set(CPACK_PACKAGE_VERSION_MAJOR "1")
-set(CPACK_PACKAGE_VERSION_MINOR "0")
-set(CPACK_PACKAGE_VERSION_PATCH "0")
-set(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "ScheduleMakerInstallDir")
-
-include(CPack)
