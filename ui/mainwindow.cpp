@@ -1,3 +1,4 @@
+#include <Qt>
 #include <QTableView>
 #include <QFileDialog>
 #include "mainwindow.h"
@@ -108,8 +109,8 @@ void MainWindow::on_teacherTableWidget_cellClicked(int row, int column)
 
     for (int k = 0; k < 6; k++) {
         for (int j = 0; j < 8; j++) {
-            QTableWidgetItem *item = new QTableWidgetItem(
-                    QString(to_string(schedule.getTeacher(row).getTime()[k][j]).c_str()));
+            QTableWidgetItem *item = new QTableWidgetItem();
+            item->setBackground(schedule.getTeacher(row).getTime()[k][j] ? Qt::white : Qt::lightGray);
             table->setItem(k, j, item);
         }
     }
