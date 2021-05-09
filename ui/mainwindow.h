@@ -44,6 +44,8 @@ private slots:
 
     void on_teacherTimeTableWidget_cellDoubleClicked(int row, int column);
 
+    void on_actionXLS_triggered();
+
 private:
     Ui::MainWindow *ui;
     Schedule schedule;

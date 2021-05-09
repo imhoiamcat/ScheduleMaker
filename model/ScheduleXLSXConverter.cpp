@@ -11,7 +11,7 @@ using namespace OpenXLSX;
 void ScheduleXLSXConverter::save(const string &path, const Schedule &schedule) const {
     XLDocument doc;
     doc.create(path);
-    auto wks = doc.workbook().worksheet("Расписание");
+    auto wks = doc.workbook().worksheet("Sheet1");
     int x = 1;
     int y = 1;
     for (int d = 0; d < DAYS; d++) {

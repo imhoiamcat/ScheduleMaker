@@ -909,9 +909,15 @@
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuSave_As">
+     <property name="title">
+      <string>Save As...</string>
+     </property>
+     <addaction name="actionXLS"/>
+    </widget>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
-    <addaction name="actionSave_as"/>
+    <addaction name="menuSave_As"/>
    </widget>
    <addaction name="menuSchedule"/>
   </widget>
@@ -929,9 +935,9 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionSave_as">
+  <action name="actionXLS">
    <property name="text">
-    <string>Save As...</string>
+    <string>XLSX</string>
    </property>
   </action>
  </widget>

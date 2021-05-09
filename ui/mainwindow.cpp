@@ -237,3 +237,10 @@ void MainWindow::on_teacherTimeTableWidget_cellDoubleClicked(int row, int column
         table->item(row, column)->setBackground(newVal ? Qt::white : Qt::lightGray) ;
     }
 }
+
+void MainWindow::on_actionXLS_triggered()
+{
+    std::string file_name = QFileDialog::getSaveFileName(this,
+                                                          tr("Save Schedule"), ".", tr("Excel Files (*.xlsx)")).toStdString();
+     schedule.save(file_name, ScheduleXLSXConverter());
+}
