@@ -110,6 +110,7 @@ void MainWindow::on_teacherTableWidget_cellClicked(int row, int column)
     for (int k = 0; k < 6; k++) {
         for (int j = 0; j < 8; j++) {
             QTableWidgetItem *item = new QTableWidgetItem();
+            item->setFlags(Qt::ItemFlag::ItemIsEnabled);
             item->setBackground(schedule.getTeacher(row).getTime()[k][j] ? Qt::white : Qt::lightGray);
             table->setItem(k, j, item);
         }
@@ -201,4 +202,16 @@ void MainWindow::on_actionOpen_triggered()
 void MainWindow::on_actionSave_triggered()
 {
     schedule.save("out.txt");
+}
+
+void MainWindow::on_teacherTimeTableWidget_cellDoubleClicked(int row, int column)
+{
+    QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTimeTableWidget"));
+    if (table->item(row, column) != NULL) {
+        int val = schedule.getTeacher(row).getTime()[row][column];
+        int newVal = 1 - val;
+        schedule.getTeacher(row).getTime()[row][column] = newVal;
+
+        table->item(row, column)->setBackground(newVal ? Qt::white : Qt::lightGray) ;
+    }
 }
