@@ -106,7 +106,7 @@ void MainWindow::load(const string& input_name) {
 void MainWindow::on_teacherTableWidget_cellClicked(int row, int column)
 {
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTimeTableWidget"));
-
+    currentTeacherRow = row;
     for (int k = 0; k < 6; k++) {
         for (int j = 0; j < 8; j++) {
             QTableWidgetItem *item = new QTableWidgetItem();
@@ -147,6 +147,27 @@ void MainWindow::on_gradeTableWidget_cellClicked(int row, int column)
 
 void MainWindow::on_generateButton_clicked()
 {
+    QTableWidget *dayTable[] = {
+            this->centralWidget()->findChild<QTableWidget *>(QString("monSchedTableWidget")),
+            this->centralWidget()->findChild<QTableWidget *>(QString("tueSchedTableWidget")),
+            this->centralWidget()->findChild<QTableWidget *>(QString("wedSchedTableWidget")),
+            this->centralWidget()->findChild<QTableWidget *>(QString("thuSchedTableWidget")),
+            this->centralWidget()->findChild<QTableWidget *>(QString("friSchedTableWidget")),
+            this->centralWidget()->findChild<QTableWidget *>(QString("satSchedTableWidget")),
+    };
+
+    for (int i = 0; i < 6; i++) {
+        dayTable[i]->setRowCount(8);
+        for (int j = 0; j < 8; j++) {
+            QTableWidgetItem *item = new QTableWidgetItem(QString(to_string(j).c_str()));
+            dayTable[i]->setItem(j, 0, item);
+            item = new QTableWidgetItem(QString(""));
+            dayTable[i]->setItem(j, 1, item);
+            item = new QTableWidgetItem(QString(""));
+            dayTable[i]->setItem(j, 2, item);
+        }
+    }
+
     schedule.make();
 }
 
@@ -206,11 +227,12 @@ void MainWindow::on_actionSave_triggered()
 
 void MainWindow::on_teacherTimeTableWidget_cellDoubleClicked(int row, int column)
 {
+    if (currentTeacherRow < 0) return;
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTimeTableWidget"));
     if (table->item(row, column) != NULL) {
-        int val = schedule.getTeacher(row).getTime()[row][column];
+        int val = schedule.getTeacher(currentTeacherRow).getTime()[row][column];
         int newVal = 1 - val;
-        schedule.getTeacher(row).getTime()[row][column] = newVal;
+        schedule.getTeacher(currentTeacherRow).getTime()[row][column] = newVal;
 
         table->item(row, column)->setBackground(newVal ? Qt::white : Qt::lightGray) ;
     }

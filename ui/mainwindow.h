@@ -47,6 +47,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Schedule schedule;
+    int currentTeacherRow = -1;
 
 };
 
