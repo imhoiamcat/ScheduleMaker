@@ -49,11 +49,13 @@ private slots:
 
     void on_teacherTableWidget_itemChanged(QTableWidgetItem *item);
 
+    void on_removeSubj_clicked();
+
 private:
     Ui::MainWindow *ui;
     Schedule schedule;
     int currentTeacherRow = -1;
-
+    string gradeName;
 };
 
 #endif // MAINWINDOW_H

@@ -28,8 +28,6 @@ void MainWindow::on_pushButton_clicked() {
     table->setItem(row, 0, item);
 }
 
-
-
 void MainWindow::on_pushButton_2_clicked()
 {
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTableWidget"));
@@ -113,9 +111,9 @@ void MainWindow::on_gradeTableWidget_cellClicked(int row, int column)
     auto item  = gradeTable->item(row, 0);
 
 
-    string grade = item->text().toStdString();
+    gradeName = item->text().toStdString();
 
-    auto details = schedule.getProgram().at(grade);
+    auto details = schedule.getProgram().at(gradeName);
     table->setRowCount(details.size());
     for (int i = 0; i < details.size(); i++) {
         QTableWidgetItem *item = new QTableWidgetItem(
@@ -237,5 +235,15 @@ void MainWindow::on_teacherTableWidget_itemChanged(QTableWidgetItem *item)
 {
     if (item->column() == 0) {
         schedule.getTeacher(item->row()).setName(item->text().toStdString());
+    }
+}
+
+void MainWindow::on_removeSubj_clicked()
+{
+    auto &details = schedule.getProgram().at(gradeName);
+    if (!details.empty()) {
+        QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("gradeDetailsTableWidget"));
+        table->removeRow(details.size() - 1);
+        details.pop_back();
     }
 }

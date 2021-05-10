@@ -51,7 +51,7 @@ private:
     vector<Teacher> teachers;
     map<string, vector<pair<Lesson, int>>> program;
 public:
-    const map<string, vector<pair<Lesson, int>>> &getProgram() const;
+    map<string, vector<pair<Lesson, int>>> &getProgram();
 };
 
 class ScheduleConverter {

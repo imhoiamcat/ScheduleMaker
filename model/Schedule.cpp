@@ -115,7 +115,7 @@ void Schedule::deleteTeacher(const string &name) {
     }
 }
 
-const map<string, vector<pair<Lesson, int>>> &Schedule::getProgram() const {
+map<string, vector<pair<Lesson, int>>> &Schedule::getProgram() {
     return program;
 }
 
