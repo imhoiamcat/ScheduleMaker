@@ -4,6 +4,7 @@
 
 #ifndef SCHEDULEMAKER_TEACHER_CLASS_H
 #define SCHEDULEMAKER_TEACHER_CLASS_H
+
 #include <iostream>
 #include <utility>
 
@@ -17,12 +18,20 @@ public:
     Teacher() {
         setName("");
         vector<vector<int>> tmp;
+        tmp.resize(6);
+        for (int i = 0; i < 6; i++) {
+            tmp[i].resize(8, 0);
+        }
         setTime(tmp);
     }
 
     Teacher(string name) {
         setName(std::move(name));
         vector<vector<int>> tmp;
+        tmp.resize(6);
+        for (int i = 0; i < 6; i++) {
+            tmp[i].resize(8, 0);
+        }
         setTime(tmp);
     }
 
@@ -30,19 +39,25 @@ public:
         setName(std::move(name));
         setTime(std::move(time));
     }
+
     ~Teacher() = default;
+
     void setName(string name) {
         name_ = std::move(name);
     }
+
     void setTime(vector<vector<int>> time) {
         time_ = std::move(time);
     }
+
     string getName() const {
         return name_;
     }
-    vector<vector<int>>&  getTime(){
+
+    vector<vector<int>> &getTime() {
         return time_;
     }
+
     int can(int i) {
         int cnt = 0;
         for (int j = 0; j < 8; j++) {
