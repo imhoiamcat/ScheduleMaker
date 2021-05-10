@@ -46,7 +46,7 @@
         </property>
         <widget class="QWidget" name="teacher">
          <attribute name="title">
-          <string>Teacher</string>
+          <string>Преподаватель</string>
          </attribute>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
@@ -90,7 +90,7 @@
               </column>
               <column>
                <property name="text">
-                <string>Name</string>
+                <string>ФИО</string>
                </property>
               </column>
              </widget>
@@ -171,32 +171,32 @@
             </attribute>
             <row>
              <property name="text">
-              <string>Mon</string>
+              <string>Пн</string>
              </property>
             </row>
             <row>
              <property name="text">
-              <string>Tun</string>
+              <string>Вт</string>
              </property>
             </row>
             <row>
              <property name="text">
-              <string>Wed</string>
+              <string>Ср</string>
              </property>
             </row>
             <row>
              <property name="text">
-              <string>Thu</string>
+              <string>Чт</string>
              </property>
             </row>
             <row>
              <property name="text">
-              <string>Fri</string>
+              <string>Пт</string>
              </property>
             </row>
             <row>
              <property name="text">
-              <string>Sat</string>
+              <string>Сб</string>
              </property>
             </row>
             <column>
@@ -248,36 +248,57 @@
              </property>
             </item>
             <item row="0" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="0" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
@@ -291,196 +312,313 @@
              </property>
             </item>
             <item row="1" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="1" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="0">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="2" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="0">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="3" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="0">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="4" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="0">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="1">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="2">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="3">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="4">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="5">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="6">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
             </item>
             <item row="5" column="7">
+             <property name="text">
+              <string/>
+             </property>
              <property name="flags">
               <set>NoItemFlags</set>
              </property>
@@ -491,7 +629,7 @@
         </widget>
         <widget class="QWidget" name="Class">
          <attribute name="title">
-          <string>Class</string>
+          <string>Класс</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_10">
           <item row="0" column="0">
@@ -516,7 +654,7 @@
                 </column>
                 <column>
                  <property name="text">
-                  <string>Grade</string>
+                  <string>Класс</string>
                  </property>
                 </column>
                </widget>
@@ -569,17 +707,17 @@
             </attribute>
             <column>
              <property name="text">
-              <string>Subject</string>
+              <string>Предмет</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Teacher</string>
+              <string>Преподаватель</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Hours</string>
+              <string>Часы</string>
              </property>
             </column>
            </widget>
@@ -588,7 +726,7 @@
         </widget>
         <widget class="QWidget" name="Schedule">
          <attribute name="title">
-          <string>Schedule</string>
+          <string>Расписание</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="1">
@@ -617,7 +755,7 @@
             </attribute>
             <column>
              <property name="text">
-              <string>Grade</string>
+              <string>Класс</string>
              </property>
             </column>
            </widget>
@@ -655,11 +793,11 @@
             <item row="0" column="0">
              <widget class="QTabWidget" name="scheduleTabWidget">
               <property name="currentIndex">
-               <number>0</number>
+               <number>5</number>
               </property>
               <widget class="QWidget" name="mon">
                <attribute name="title">
-                <string>Mon</string>
+                <string>Пн</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_9">
                 <item row="0" column="0">
@@ -672,17 +810,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Lesson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
@@ -691,7 +829,7 @@
               </widget>
               <widget class="QWidget" name="tue">
                <attribute name="title">
-                <string>Tue</string>
+                <string>Вт</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_8">
                 <item row="0" column="0">
@@ -707,17 +845,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Leson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
@@ -726,7 +864,7 @@
               </widget>
               <widget class="QWidget" name="wed">
                <attribute name="title">
-                <string>Wed</string>
+                <string>Ср</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_7">
                 <item row="0" column="0">
@@ -739,17 +877,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Leson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
@@ -758,7 +896,7 @@
               </widget>
               <widget class="QWidget" name="thu">
                <attribute name="title">
-                <string>Thu</string>
+                <string>Чт</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_6">
                 <item row="0" column="0">
@@ -771,17 +909,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Leson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
@@ -790,7 +928,7 @@
               </widget>
               <widget class="QWidget" name="fri">
                <attribute name="title">
-                <string>Fri</string>
+                <string>Пт</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_5">
                 <item row="0" column="0">
@@ -803,17 +941,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Leson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
@@ -822,7 +960,7 @@
               </widget>
               <widget class="QWidget" name="sat">
                <attribute name="title">
-                <string>Sat</string>
+                <string>Сб</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_2">
                 <item row="0" column="0">
@@ -835,17 +973,17 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Leson</string>
+                    <string>Урок</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Subject</string>
+                    <string>Предмет</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Teacher</string>
+                    <string>Преподаватель</string>
                    </property>
                   </column>
                  </widget>
