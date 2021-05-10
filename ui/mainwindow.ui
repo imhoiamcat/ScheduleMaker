@@ -42,7 +42,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teacher&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="teacher">
          <attribute name="title">
@@ -113,14 +113,14 @@
               <item>
                <widget class="QPushButton" name="pushButton">
                 <property name="text">
-                 <string>Add</string>
+                 <string>Добавить</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton_2">
                 <property name="text">
-                 <string>Remove</string>
+                 <string>Удалить</string>
                 </property>
                </widget>
               </item>
@@ -649,11 +649,6 @@
                 </attribute>
                 <column>
                  <property name="text">
-                  <string>ClassID</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
                   <string>Класс</string>
                  </property>
                 </column>
@@ -677,14 +672,14 @@
                 <item>
                  <widget class="QPushButton" name="pushButton_5">
                   <property name="text">
-                   <string>Add</string>
+                   <string>Добавить</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="pushButton_6">
                   <property name="text">
-                   <string>Remove</string>
+                   <string>Удалить</string>
                   </property>
                  </widget>
                 </item>
@@ -694,33 +689,68 @@
             </item>
            </layout>
           </item>
-          <item row="0" column="2">
-           <widget class="QTableWidget" name="gradeDetailsTableWidget">
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContents</enum>
-            </property>
-            <property name="columnCount">
-             <number>3</number>
-            </property>
-            <attribute name="verticalHeaderVisible">
-             <bool>false</bool>
-            </attribute>
-            <column>
-             <property name="text">
-              <string>Предмет</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Преподаватель</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Часы</string>
-             </property>
-            </column>
-           </widget>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QTableWidget" name="gradeDetailsTableWidget">
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContents</enum>
+              </property>
+              <property name="columnCount">
+               <number>3</number>
+              </property>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Предмет</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Преподаватель</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Часы</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="text">
+                 <string>Добавить</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_3">
+                <property name="text">
+                 <string>Удалить</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -769,7 +799,7 @@
                 <item row="1" column="1">
                  <widget class="QPushButton" name="generateButton">
                   <property name="text">
-                   <string>Generate</string>
+                   <string>Составить</string>
                   </property>
                  </widget>
                 </item>
@@ -1045,11 +1075,11 @@
    </property>
    <widget class="QMenu" name="menuSchedule">
     <property name="title">
-     <string>File</string>
+     <string>Файл</string>
     </property>
     <widget class="QMenu" name="menuSave_As">
      <property name="title">
-      <string>Save As...</string>
+      <string>Сохранить Как</string>
      </property>
      <addaction name="actionXLS"/>
     </widget>
@@ -1065,12 +1095,12 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Open</string>
+    <string>Открыть</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
-    <string>Save</string>
+    <string>Сохранить</string>
    </property>
   </action>
   <action name="actionXLS">

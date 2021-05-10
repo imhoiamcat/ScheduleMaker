@@ -83,13 +83,8 @@ void MainWindow::load(const string& input_name) {
     table->setRowCount(schedule.getProgram().size());
     int row = 0;
     for (pair<string, vector<pair<Lesson, int>>> i: schedule.getProgram()) {
-        QTableWidgetItem *item = new QTableWidgetItem(
-                QString(to_string(row).c_str()));
-
-        table->setItem(row, 0, item);
-
-        item = new QTableWidgetItem(QString(i.first.c_str()));
-        table->setItem(row++, 1, item);
+        QTableWidgetItem *item = new QTableWidgetItem(QString(i.first.c_str()));
+        table->setItem(row++, 0, item);
     }
 
     table = this->centralWidget()->findChild<QTableWidget *>(QString("scheduleTableWidget"));
@@ -123,7 +118,7 @@ void MainWindow::on_gradeTableWidget_cellClicked(int row, int column)
     QTableWidget *gradeTable = this->centralWidget()->findChild<QTableWidget *>(QString("gradeTableWidget"));
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("gradeDetailsTableWidget"));
 
-    auto item  = gradeTable->item(row, 1);
+    auto item  = gradeTable->item(row, 0);
 
 
     string grade = item->text().toStdString();
