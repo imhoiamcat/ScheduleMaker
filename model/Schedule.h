@@ -21,6 +21,16 @@ public:
     }
 
     void removeLastTeacher() {
+        for (auto &i: program) {
+           auto j = i.second.begin();
+           while (j!= i.second.end()) {
+               if ((*j).first.getTeacher() == teacherCount()-1) {
+                   j = i.second.erase(j);
+               } else {
+                   j++;
+               }
+           }
+        }
         if (!teachers.empty()) {
             teachers.pop_back();
         }
