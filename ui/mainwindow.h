@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidgetItem>
 #include "model/Teacher.h"
 #include "model/Schedule.h"
 #include "model/ScheduleXLSXConverter.h"
@@ -45,6 +46,8 @@ private slots:
     void on_teacherTimeTableWidget_cellDoubleClicked(int row, int column);
 
     void on_actionXLS_triggered();
+
+    void on_teacherTableWidget_itemChanged(QTableWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

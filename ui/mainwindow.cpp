@@ -18,7 +18,8 @@ void MainWindow::on_pushButton_clicked() {
 
     QTableWidget *table = this->centralWidget()->findChild<QTableWidget *>(QString("teacherTableWidget"));
 
-    int row = schedule.teacherCount();
+    schedule.addTeacher("ФИО");
+    int row = schedule.teacherCount()-1;
 
     table->setRowCount(schedule.teacherCount());
 
@@ -243,4 +244,11 @@ void MainWindow::on_actionXLS_triggered()
     std::string file_name = QFileDialog::getSaveFileName(this,
                                                           tr("Save Schedule"), ".", tr("Excel Files (*.xlsx)")).toStdString();
      schedule.save(file_name, ScheduleXLSXConverter());
+}
+
+void MainWindow::on_teacherTableWidget_itemChanged(QTableWidgetItem *item)
+{
+    if (item->column() == 1) {
+        schedule.getTeacher(item->row()).setName(item->text().toStdString());
+    }
 }
