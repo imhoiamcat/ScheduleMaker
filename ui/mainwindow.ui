@@ -42,7 +42,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teacher&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="teacher">
          <attribute name="title">
@@ -72,7 +72,7 @@
                <enum>QAbstractItemView::SelectRows</enum>
               </property>
               <property name="columnCount">
-               <number>2</number>
+               <number>1</number>
               </property>
               <attribute name="horizontalHeaderDefaultSectionSize">
                <number>200</number>
@@ -83,11 +83,6 @@
               <attribute name="verticalHeaderVisible">
                <bool>false</bool>
               </attribute>
-              <column>
-               <property name="text">
-                <string>TeacherID</string>
-               </property>
-              </column>
               <column>
                <property name="text">
                 <string>ФИО</string>

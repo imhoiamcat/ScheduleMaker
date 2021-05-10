@@ -24,12 +24,8 @@ void MainWindow::on_pushButton_clicked() {
     table->setRowCount(schedule.teacherCount());
 
     QTableWidgetItem *item = new QTableWidgetItem(
-            QString(to_string(schedule.getTeacher(row).getID()).c_str()));
-    table->setItem(row, 0, item);
-
-    item = new QTableWidgetItem(
             QString(schedule.getTeacher(row).getName().c_str()));
-    table->setItem(row, 1, item);
+    table->setItem(row, 0, item);
 }
 
 
@@ -70,12 +66,8 @@ void MainWindow::load(const string& input_name) {
 
     for (int row = 0; row < count; row++) {
         QTableWidgetItem *item = new QTableWidgetItem(
-                QString(to_string(schedule.getTeacher(row).getID()).c_str()));
-        table->setItem(row, 0, item);
-
-        item = new QTableWidgetItem(
                 QString(schedule.getTeacher(row).getName().c_str()));
-        table->setItem(row, 1, item);
+        table->setItem(row, 0, item);
     }
 
     table = this->centralWidget()->findChild<QTableWidget *>(QString("gradeTableWidget"));
@@ -243,7 +235,7 @@ void MainWindow::on_actionXLS_triggered()
 
 void MainWindow::on_teacherTableWidget_itemChanged(QTableWidgetItem *item)
 {
-    if (item->column() == 1) {
+    if (item->column() == 0) {
         schedule.getTeacher(item->row()).setName(item->text().toStdString());
     }
 }
