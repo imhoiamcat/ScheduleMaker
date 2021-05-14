@@ -208,7 +208,7 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-    schedule.save("out.txt");
+    schedule.save("input.txt");
 }
 
 void MainWindow::on_teacherTimeTableWidget_cellDoubleClicked(int row, int column)

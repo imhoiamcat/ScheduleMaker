@@ -79,19 +79,24 @@ void Schedule::make() {
 
 void Schedule::save(const string &output_name) const {
     ofstream fout(output_name);
-    for (pair<string, vector<vector<Lesson>>> s: schedule) {
-        fout << s.first << endl;
-        for (int i = 0; i < 6; i++) {
-            fout << "Day " << i << endl;
-            for (int j = 0; j < 8; j++) {
-                fout << j << ": ";
-                if (s.second[i][j].getTeacher() != -1) {
-                    fout << s.second[i][j].getSubj() << " " << teachers[s.second[i][j].getTeacher()].getName();
-                }
-                fout << endl;
+    fout << teachers.size() << endl;
+    for (Teacher t: teachers) {
+        fout << t.getName() << endl;
+        for (int d = 0; d < 6; d++) {
+            for (int l = 0; l < 8; l++) {
+                fout << t.getTime()[d][l] << " ";
             }
+            fout << endl;
         }
-        fout << endl;
+    }
+    fout << program.size() << endl;
+    for (pair<string, vector<pair<Lesson, int>>> grade: program) {
+        fout << grade.first << endl;
+        fout << grade.second.size() << endl;
+        for (pair<Lesson, int> subj: grade.second) {
+            fout << subj.first.getSubj() << " " << subj.first.getTeacher()
+                 << " " << subj.second << endl;
+        }
     }
     fout.close();
 }
